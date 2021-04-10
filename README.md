@@ -1,3 +1,5 @@
+# Bats and Cats 🏏 🐈
+
 A repo for playing with and learning [Dart](https://dart.dev/)
 
 A sample command-line application with an entrypoint in `bin/`, library code

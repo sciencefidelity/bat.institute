@@ -1,4 +1,4 @@
-# Bats and Cats 🏏 🐈
+# Bats and Cats 🦇 🐈
 
 A repo for playing with and learning [Dart](https://dart.dev/)
 

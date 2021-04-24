@@ -1,0 +1,21 @@
+$fg: #fafafa;
+$bg: #121212;
+$font: ui-monospace, monospace;
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family: $font;
+  color: $fg;
+}
+
+body {
+  background: $bg;
+}
+
+#output {
+  padding: 20px;
+  text-align: center;
+}

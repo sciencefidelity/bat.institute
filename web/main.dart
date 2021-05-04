@@ -1,5 +1,6 @@
-import 'dart:html';
+import 'package:angular/angular.dart';
+import 'package:bat.institute/app_component.template.dart' as ng;
 
 void main() {
-  querySelector('#output').text = 'It\'s all a just bats & cats.';
+  runApp(ng.AppComponentNgFactory);
 }

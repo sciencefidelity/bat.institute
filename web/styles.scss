@@ -5,14 +5,18 @@
 
 html {
   font-family: ui-monospace, sans-serif;
-  color: #FAFAFA;
+  color: hsl(0, 0%, 95%);
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  hsl(216, 28%, 7%);
+  background: hsl(216, 28%, 7%);
   padding: 20px;
   font-size: 2.3rem;
   text-align: center;
+}
+
+h1 {
+  font-size: 8rem;
 }

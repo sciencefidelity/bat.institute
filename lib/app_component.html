@@ -1,7 +1,16 @@
 <h1>{{title}}</h1>
-<h2>Bats #</h2>
+<div *ngIf="selected != null">
+  <h2>{{selected.name}}</h2>
+  <div><label>id: </label>{{selected.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="selected.name" placeholder="name">
+  </div>
+</div>
 <ul class="bats">
-  <li *ngFor="let bat of bats">
+  <li *ngFor="let bat of bats"
+    [class.selected]="bat === selected"
+    (click)="onSelect(bat)">
     <span class="badge">{{bat.id}}</span> {{bat.name}}
   </li>
 </ul>

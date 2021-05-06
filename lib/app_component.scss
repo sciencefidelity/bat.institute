@@ -13,12 +13,11 @@
     position: relative;
     left: 0;
     background: hsl(216, 28%, 10%);
-    margin: 0.5em;
-    height: 1.6em;
+    margin: 0.7em;
     border-radius: 0.4em;
     &:hover {
-      background: hsl(216, 28%, 13%);
-      left: 1em;
+      background: hsl(216, 28%, 21%);
+      left: 0.5em;
     }
   }
   li.selected:hover {
@@ -30,15 +29,13 @@
   }
   .badge {
     display: inline-block;
+    position: relative;
     font-size: 0.5em;
     color: hsl(216, 28%, 7%);
-    padding: 0.45em 0.5em;
-    background: hsl(0, 0%, 95%);
-    line-height: 1em;
-    position: relative;
-    left: -0.01em;
-    height: 1.8em;
-    margin: 0.3em 0.8em;
-    border-radius: 1em;
+    padding: 0.7em 1.5em;
+    background: hsl(216, 28%, 54%);
+    line-height: 2em;
+    height: 100%;
+    border-radius: 0.8em 0 0 0.8em;
   }
 }

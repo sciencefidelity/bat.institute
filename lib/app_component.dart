@@ -13,5 +13,6 @@ import 'src/mock_bats.dart';
 class AppComponent {
   final title = 'Bat Institute';
   List<Bat> bats = mockBats;
-  Bat bat = Bat(1, '🥷🏻');
+  Bat selected;
+  void onSelect(Bat bat) => selected = bat;
 }

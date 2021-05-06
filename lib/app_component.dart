@@ -7,11 +7,11 @@ import 'src/bat_service.dart';
 @Component(
   selector: 'my-app',
   template: '''
-    <h1>{{title}}</h1>
-    <my-bats></my-bats>
+    <router-outlet [routes]="Routes.all"></router-outlet>
   ''',
-  directives: [BatListComponent],
+  directives: [routerDirectives],
   providers: [ClassProvider(BatService)],
+  exports: [RoutePaths, Routes],
 )
 
 class AppComponent {

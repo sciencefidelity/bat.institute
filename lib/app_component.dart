@@ -1,13 +1,14 @@
 import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
+
 import 'src/bat.dart';
+import 'src/bat_component.dart';
 import 'src/mock_bats.dart';
 
 @Component(
   selector: 'my-app',
   templateUrl: 'app_component.html',
   styleUrls: ['app_component.css'],
-  directives: [coreDirectives, formDirectives],
+  directives: [coreDirectives, BatComponent],
 )
 
 class AppComponent {

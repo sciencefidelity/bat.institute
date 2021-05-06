@@ -1,12 +1,5 @@
 <h1>{{title}}</h1>
-<div *ngIf="selected != null">
-  <h2>{{selected.name}}</h2>
-  <div><label>id: </label>{{selected.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="selected.name" placeholder="name">
-  </div>
-</div>
+<my-bat [bat]="selected"></my-bat>
 <ul class="bats">
   <li *ngFor="let bat of bats"
     [class.selected]="bat === selected"

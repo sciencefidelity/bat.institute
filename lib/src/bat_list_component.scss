@@ -14,15 +14,11 @@
     border-radius: 0.4em;
     &:hover {
       background: hsl(216, 28%, 21%);
-      left: 0.5em;
     }
   }
   li.selected {
     background: hsl(216, 28%, 21%);
     left: 0;
-  }
-  li.selected:hover {
-    color: hsl(0, 0%, 95%);
   }
   .text {
     position: relative;

@@ -1,13 +1,11 @@
-name: bat.institute
-description: An absolute bat-bones web app.
-# version: 1.0.0
-#homepage: https://www.example.com
+name: bat_institute
+description: Bat Institute.
+version: 0.0.1
 
 environment:
   sdk: '>=2.10.0 <3.0.0'
 
 dependencies:
-#  path: ^1.7.0
   angular: ^6.0.1
   angular_forms: ^3.0.0
 

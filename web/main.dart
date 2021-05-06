@@ -6,10 +6,10 @@ import 'main.template.dart' as self;
 
 @GenerateInjector(
   // use routerProviders in prodution
-  routerProviderHash,
+  routerProvidersHash,
 )
 
-final InjectFactory injector = self.injector$Injector;
+final InjectorFactory injector = self.injector$Injector;
 
 void main() {
   runApp(ng.AppComponentNgFactory, createInjector: injector);

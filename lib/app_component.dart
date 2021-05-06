@@ -13,21 +13,19 @@ import 'src/bat_service.dart';
   directives: [coreDirectives, BatComponent],
   providers: [ClassProvider(BatService)],
 )
-
 class AppComponent implements OnInit {
   final title = 'Bat Institute';
   final BatService _batService;
   List<Bat> bats;
   Bat selected;
-  
+
   AppComponent(this._batService);
-  
+
   Future<void> _getBats() async {
     bats = await _batService.getAll();
   }
-  
+
   void ngOnInit() => _getBats();
-  
+
   void onSelect(Bat bat) => selected = bat;
 }
-

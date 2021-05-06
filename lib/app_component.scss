@@ -1,0 +1,44 @@
+.selected {
+  background: hsl(216, 28%, 19%);
+}
+
+.bats {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  font-size: 3.5rem;
+  li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background: hsl(216, 28%, 10%);
+    margin: 0.5em;
+    height: 1.6em;
+    border-radius: 0.4em;
+    &:hover {
+      background: hsl(216, 28%, 13%);
+      left: 1em;
+    }
+  }
+  li.selected:hover {
+    color: hsl(0, 0%, 95%);
+  }
+  .text {
+    position: relative;
+    top: -0.03em;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 0.5em;
+    color: hsl(216, 28%, 7%);
+    padding: 0.45em 0.5em;
+    background: hsl(0, 0%, 95%);
+    line-height: 1em;
+    position: relative;
+    left: -0.01em;
+    height: 1.8em;
+    margin: 0.3em 0.8em;
+    border-radius: 1em;
+  }
+}

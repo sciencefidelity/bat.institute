@@ -6,6 +6,7 @@ import 'src/mock_bats.dart';
 @Component(
   selector: 'my-app',
   templateUrl: 'app_component.html',
+  styleUrls: ['app_component.css'],
   directives: [coreDirectives, formDirectives],
 )
 

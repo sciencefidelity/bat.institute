@@ -9,6 +9,8 @@ import 'src/routes.dart';
   template: '''
     <h1>{{title}}</h1>
     <nav>
+      <a [routerLink]="RoutePaths.dashboard.toUrl()"
+         [routerLinkActive]="'active'">Dashboard</a>
       <a [routerLink]="RoutePaths.bats.toUrl()"
          [routerLinkActive]="'active'">Bats</a>
     </nav>

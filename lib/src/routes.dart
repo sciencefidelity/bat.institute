@@ -2,7 +2,7 @@ import 'package:angular_router/angular_router.dart';
 
 import 'route_paths.dart';
 import 'dashboard_component.template.dart' as dashboard_template;
-import 'bat_component.template.dart' as bat_component;
+import 'bat_component.template.dart' as bat_template;
 import 'bat_list_component.template.dart' as bat_list_template;
 
 export 'route_paths.dart';
@@ -13,7 +13,7 @@ class Routes {
     component: dashboard_template.DashboardComponentNgFactory,
   );
   static final bat = RouteDefinition(
-    routePath: RoutePaths.hero,
+    routePath: RoutePaths.bat,
     component: bat_template.BatComponentNgFactory,
     );
   static final bats = RouteDefinition(

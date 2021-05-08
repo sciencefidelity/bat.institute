@@ -30,9 +30,24 @@ h1 {
 }
 
 h2 {
-  font-size: 6rem;
+  font-size: 3.5rem;
 }
 
-h4 {
-  position: relative;
+h3 {
+  font-size: 3rem;
+}
+
+button {
+  font-family: ui-monospace, monospace;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #cfd8dc;
+  }
 }

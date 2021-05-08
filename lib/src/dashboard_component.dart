@@ -8,6 +8,7 @@ import 'route_paths.dart';
 @Component(
   selector: 'my-dashboard',
   templateUrl: 'dashboard_component.html',
+  styleUrls: ['dashboard_component.css'],
   directives: [coreDirectives, routerDirectives],
 )
 class DashboardComponent implements OnInit {
@@ -16,6 +17,8 @@ class DashboardComponent implements OnInit {
   final BatService _batService;
   
   DashboardComponent(this._batService);
+  
+  String batUrl(int id) => RoutePaths.bat.toUrl(parameters: {idParam: '$id'});
   
   @override
   void ngOnInit() async {

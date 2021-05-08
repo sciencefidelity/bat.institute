@@ -1,3 +1,4 @@
+<h2>Bats</h2>
 <ul class="bats">
   <li *ngFor="let bat of bats"
     [class.selected]="bat === selected"
@@ -5,3 +6,9 @@
     <span class="badge">{{bat.id}}</span> {{bat.name}}
   </li>
 </ul>
+<div *ngIf="selected != null">
+  <h2>
+    {{selected.name | uppercase}} is my bat
+  </h2>
+  <button (click)="gotoDetail()">View details</button>
+</div>

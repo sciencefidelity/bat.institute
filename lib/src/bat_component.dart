@@ -9,6 +9,7 @@ import 'route_paths.dart';
 @Component(
   selector: 'my-bat',
   templateUrl: 'bat_component.html',
+  styleUrls: ['bat_component.css'],
   directives: [coreDirectives, formDirectives],
 )
 

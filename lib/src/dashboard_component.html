@@ -1,6 +1,7 @@
 <h3>Scariest Bats</h3>
 <div class="grid grid-pad">
-  <div *ngFor="let bat of bats">
+  <div *ngFor="let bat of bats" class="col-1-4"
+      [routerLink]="batUrl(bat.id)">
     <div class="module bat">
       <h4>{{bat.name}}</h4>
     </div>

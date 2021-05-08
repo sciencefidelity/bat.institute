@@ -1,3 +1,5 @@
+@use '../lib/src/colors' as c;
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -5,13 +7,13 @@
 
 html {
   font-family: ui-monospace, sans-serif;
-  color: hsl(0, 0%, 95%);
+  color: c.$white;
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  background: hsl(216, 28%, 7%);
+  background: c.$blue-950;
   padding: 20px;
   font-size: 2.3rem;
 }
@@ -20,7 +22,7 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   line-height: 2;
   text-align: center;
 }
@@ -37,17 +39,23 @@ h3 {
   font-size: 3rem;
 }
 
+h4 {
+  font-size: 10rem;
+}
+
 button {
+  display: block;
+  margin: auto;
   font-family: ui-monospace, monospace;
   font-size: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-  background-color: #eee;
-  border: none;
+  margin-top: 1rem;
+  color: c.$blue-200;
+  background: c.$blue-850;
+  border: 0.1rem solid c.$blue-750;
   border-radius: 0.4rem;
   padding: 1rem 1.2rem;
   cursor: pointer;
   &:hover {
-    background-color: #cfd8dc;
+    background: c.$blue-750;
   }
 }

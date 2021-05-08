@@ -1,15 +1,20 @@
+@use './src/colors' as c;
+
 nav {
   display: flex;
   justify-content: center;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   a {
     display: block;
     padding: 0.5rem 1rem;
     margin: 1rem;
-    background: #eee;
+    background: c.$blue-800;
+    color: c.$blue-200;
+    border: 0.1rem solid c.$blue-750;
     border-radius: 0.4rem;
     &.active {
-      color: #039be5;
+      background: c.$blue-350;
+      color: c.$blue-800;
     }
   }
 }

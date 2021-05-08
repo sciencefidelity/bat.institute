@@ -1,3 +1,4 @@
+@use 'colors' as c;
 
 .grid {
   display: grid;
@@ -8,13 +9,14 @@
 }
 
 .module {
-  padding: 2rem;
+  padding: 1rem 2rem;
   text-align: center;
-  background: #607D8B;
+  background: c.$blue-900;
+  border: 0.1rem solid c.$blue-750;
   border-radius: 0.4rem;
   &:hover {
-    background: #EEE;
+    background: c.$blue-750;
     cursor: pointer;
-    color: #607d8b;
+    color: c.$blue-050;
   }
 }

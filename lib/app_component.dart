@@ -10,7 +10,7 @@ import 'src/routes.dart';
     <h1>{{title}}</h1>
     <nav>
       <a [routerLink]="RoutePaths.dashboard.toUrl()"
-         [routerLinkActive]="'active'">Dashboard</a>
+         [routerLinkActive]="'active'">Dash</a>
       <a [routerLink]="RoutePaths.bats.toUrl()"
          [routerLinkActive]="'active'">Bats</a>
     </nav>

@@ -1,3 +1,4 @@
+@use 'colors' as c;
 
 .bats {
   display: grid;
@@ -7,21 +8,28 @@
   list-style-type: none;
   font-size: 5rem;
   padding: 0;
+  margin-bottom: 1rem;
   li {
     display: block;
     cursor: pointer;
-    background: hsl(216, 28%, 10%);
+    background: c.$blue-900;
+    border: 0.1rem solid c.$blue-750;
     border-radius: 0.4rem;
     padding: 1rem 1rem;
     &:hover {
-      background: hsl(216, 28%, 21%);
+      background: c.$blue-750;
+      cursor: pointer;
     }
   }
   li.selected {
-    background: hsl(216, 28%, 21%);
+    background: c.$blue-750;
   }
   .badge {
     font-size: 0.35em;
-    color: hsl(0, 0%, 95%);
+    color: c.$blue-050;
   }
+}
+
+.chosen-bat {
+  font-size: 5rem;
 }

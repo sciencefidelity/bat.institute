@@ -3,12 +3,12 @@
   <li *ngFor="let bat of bats"
     [class.selected]="bat === selected"
     (click)="onSelect(bat)">
-    <span class="badge">{{bat.id}}</span> {{bat.name}}
+    <span class="badge">#{{bat.id}}</span> {{bat.name}}
   </li>
 </ul>
 <div *ngIf="selected != null">
   <h3>
-    {{selected.name | uppercase}} is my bat
+    <span class="chosen-bat">{{selected.name | uppercase}}</span> is my bat
   </h3>
   <button (click)="gotoDetail()">View details</button>
 </div>

@@ -15,7 +15,7 @@ class Routes {
   static final bat = RouteDefinition(
     routePath: RoutePaths.bat,
     component: bat_template.BatComponentNgFactory,
-    );
+  );
   static final bats = RouteDefinition(
     routePath: RoutePaths.bats,
     component: bat_list_template.BatListComponentNgFactory,

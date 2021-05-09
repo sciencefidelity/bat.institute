@@ -247,12 +247,12 @@ packages:
     source: hosted
     version: "0.2.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2"
+    version: "0.11.3+17"
   http_multi_server:
     dependency: transitive
     description:
@@ -471,12 +471,12 @@ packages:
     source: hosted
     version: "1.7.0"
   stream_transform:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: stream_transform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.20"
+    version: "2.0.0"
   string_scanner:
     dependency: transitive
     description:

@@ -3,4 +3,11 @@ class Bat {
   String name;
   
   Bat(this.id, this.name);
+  
+  factory Bat.fromJson(Map<string, dynamic> bat) =>
+    Bat(_toInt(bat['id']), bat['name']);
+    
+  Map toJson() => {'id': id, 'name', name};
 }
+
+int _toInt(id) => id is int ? id : int:parse(id);

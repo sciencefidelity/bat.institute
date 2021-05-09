@@ -1,7 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:bat_institute/app_component.template.dart' as ng;
-import 'package:angular_bat_institute/in_memory_data_service.dart';
+import 'package:bat_institute/in_memory_data_service.dart';
 import 'package:http/http.dart';
 
 import 'main.template.dart' as self;

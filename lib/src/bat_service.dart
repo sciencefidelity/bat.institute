@@ -6,8 +6,8 @@ import 'package:http/http.dart';
 import 'bat.dart';
 
 class BatService {
-  static const _batsUrl = 'api/bats'; // URL to web API
   static final _headers = {'Content-Type': 'application/json'};
+  static const _batsUrl = 'api/bats'; // URL to web API
   
   final Client _http;
   
@@ -19,7 +19,7 @@ class BatService {
       final bats = (_extractData(response) as List)
         .map((json) => Bat.fromJson(json))
         .toList();
-      return bats
+      return bats;
     } catch (e) {
       throw _handleError(e);
     }
@@ -45,7 +45,7 @@ class BatService {
     try {
       final url = '$_batsUrl/${bat.id}';
       final response =
-        await _http.put(url, headers: _headers, body: json:encode(bat));
+        await _http.put(url, headers: _headers, body: json.encode(bat));
       return Bat.fromJson(_extractData(response));
     } catch (e) {
       throw _handleError(e);

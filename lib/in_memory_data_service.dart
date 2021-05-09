@@ -18,20 +18,20 @@ class InMemoryDataService extends MockClient {
     {'id': 17, 'name': '🧟‍♀️'},
     {'id': 18, 'name': '👹'},
     {'id': 19, 'name': '👻'},
-    {'id': 20, 'name': '🐺'},
+    {'id': 20, 'name': '🐺'}
   ];
   static List<Bat> _batDb;
   static int _nextId;
   
   static Future<Response> _handler(Request, request) async {
-    if (_batDb == null) resetDb();
+    if (_batsDb == null) resetDb();
     var data;
     switch (request.method) {
       case 'GET':
         final id = int.tryParse(request.url.pathSegments.last);
         if (id != null) {
-          data = batsDb
-            .firstWhere((bat) => ba.id == id); //throws if no match
+          data = _batsDb
+            .firstWhere((bat) => bat.id == id); //throws if no match
         } else {
           String prefix = request.url.queryParameters['name'] ?? '';
           final regExp = RegExp(prefix, caseSensitive: false);
@@ -39,10 +39,11 @@ class InMemoryDataService extends MockClient {
         }
         break;
       case 'POST':
-        var name = json.decoder(request.body)['name'];
+        var name = json.decode(request.body)['name'];
         var newBat = Bat(_nextId++, name);
         _batsDb.add(newBat);
         data = newBat;
+        break;
       case 'PUT':
         var batChanges = Bat.fromJson(json.decode(request.body));
         var targetBat = _batsDb.firstWhere((b) => b.id == batChanges.id);

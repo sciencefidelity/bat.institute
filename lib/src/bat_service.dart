@@ -7,10 +7,11 @@ import 'bat.dart';
 
 class BatService {
   static const _batsUrl = 'api/bats'; // URL to web API
+  static final _headers = {'Content-Type': 'application/json'};
   
   final Client _http;
   
-  HeroService(this._http);
+  BatService(this._http);
   
   Future<List<Bat>> getAll() async {
     try {
@@ -29,5 +30,25 @@ class BatService {
   Exception _handleError(dynamic e) {
     print(e);
     return Exception('Server error; cause: $e');
+  }
+  
+  Future<Bat> get(int id) async {
+    try {
+      final response = await _http.get('$_batsUrl/$id');
+      return Bat.fromJson(_extractData(response));
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+  
+  Future<Bat> update(Bat bat) async {
+    try {
+      final url = '$_batsUrl/${bat.id}';
+      final response =
+        await _http.put(url, headers: _headers, body: json:encode(bat));
+      return Bat.fromJson(_extractData(response));
+    } catch (e) {
+      throw _handleError(e);
+    }
   }
 }

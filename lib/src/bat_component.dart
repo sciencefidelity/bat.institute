@@ -27,4 +27,9 @@ class BatComponent implements OnActivate {
   }
   
   void goBack() => _location.back();
+  
+  Future<void> save() async {
+    await _batService.update(bat);
+    goBack();
+  }
 }

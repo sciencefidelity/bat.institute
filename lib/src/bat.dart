@@ -10,5 +10,4 @@ class Bat {
   Map toJson() => {'id': id, 'name': name};
 }
 
-
 int _toInt(id) => id is int ? id : int.parse(id);

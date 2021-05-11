@@ -28,7 +28,7 @@ class BatService {
   dynamic _extractData(Response resp) => json.decode(resp.body)['data'];
   
   Exception _handleError(dynamic e) {
-    print(e);
+    print(e); // for demo purposes only
     return Exception('Server error; cause: $e');
   }
   
@@ -47,6 +47,25 @@ class BatService {
       final response =
         await _http.put(url, headers: _headers, body: json.encode(bat));
       return Bat.fromJson(_extractData(response));
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+  
+  Future<Bat> create(String name) async {
+    try {
+      final response = await _http.post(_batsUrl,
+        headers: _headers, body: json.encode({'name': name}));
+      return Bat.fromJson(_extractData(response));
+    } catch (e) {
+      throw _handleError(e);
+    }
+  }
+  
+  Future<void> delete(int id) async {
+    try {
+      final url = '$_batsUrl/$id';
+      await _http.delete(url, headers: _headers);
     } catch (e) {
       throw _handleError(e);
     }

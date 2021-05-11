@@ -1,8 +1,8 @@
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
-import 'src/bat_service.dart';
 import 'src/routes.dart';
+import 'src/bat_service.dart';
 
 @Component(
   selector: 'my-app',

@@ -20,7 +20,7 @@ class InMemoryDataService extends MockClient {
     {'id': 19, 'name': '👻'},
     {'id': 20, 'name': '🐺'}
   ];
-  static List<Bat> _batDb;
+  static List<Bat> _batsDb;
   static int _nextId;
   
   static Future<Response> _handler(Request, request) async {
@@ -53,6 +53,7 @@ class InMemoryDataService extends MockClient {
       case 'DELETE':
         var id = int.parse(request.url.pathSegments.last);
         _batsDb.removeWhere((bat) => bat.id == id);
+        // no data so leave it as null
         break;
       default:
         throw 'Unimplemented HTTP method ${request.method}';

@@ -1,9 +1,18 @@
 <h2>Bats</h2>
+<div>
+  <label>Bat name:</label> <input #batName />
+  <button (click)="add(batName.value); batName.value=''">
+    Add
+  </button>
+</div>
 <ul class="bats">
   <li *ngFor="let bat of bats"
     [class.selected]="bat === selected"
     (click)="onSelect(bat)">
-    <span class="badge">#{{bat.id}}</span> {{bat.name}}
+    <span class="badge">{{bat.id}}</span>
+    <span>{{bat.name}}</span>
+    <button class="delete"
+      (click)="delete(bat); $event.stopPropagation()">x</button>
   </li>
 </ul>
 <div *ngIf="selected != null">

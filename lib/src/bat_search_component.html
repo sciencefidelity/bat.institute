@@ -1,0 +1,12 @@
+<div id="search-component">
+  <h4>Bat Search</h4>
+  <input #searchBox id="search-box"
+         (change)="search(searchBox.value)"
+         (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let bat of bats | async"
+         (click)="gotoDetail(Bat)" class="search-result" >
+      {{bat.name}}
+    </div>
+  </div>
+</div>

@@ -4,12 +4,13 @@ import 'package:angular_router/angular_router.dart';
 import 'bat.dart';
 import 'bat_service.dart';
 import 'route_paths.dart';
+import 'bat_search_component.dart'
 
 @Component(
   selector: 'my-dashboard',
   templateUrl: 'dashboard_component.html',
   styleUrls: ['dashboard_component.css'],
-  directives: [coreDirectives, routerDirectives],
+  directives: [coreDirectives, batSearchComponent, routerDirectives],
 )
 class DashboardComponent implements OnInit {
   List<Bat> bats;

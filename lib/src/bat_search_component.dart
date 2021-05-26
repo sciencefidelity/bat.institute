@@ -12,7 +12,7 @@ import 'bat.dart';
   selector: 'bat-search',
   templateUrl: 'bat_search_component.html',
   styleUrls: ['bat_search_component.css'],
-  directies: [coreDirectives],
+  directives: [coreDirectives],
   providers: [ClassProvider(BatSearchService)],
   pipes: [commonPipes],
 )

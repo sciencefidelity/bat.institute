@@ -23,7 +23,7 @@ class InMemoryDataService extends MockClient {
   static List<Bat> _batsDb;
   static int _nextId;
   
-  static Future<Response> _handler(Request, request) async {
+  static Future<Response> _handler(Request request) async {
     if (_batsDb == null) resetDb();
     var data;
     switch (request.method) {

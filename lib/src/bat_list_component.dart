@@ -5,13 +5,14 @@ import 'package:angular_router/angular_router.dart';
 
 import 'route_paths.dart';
 import 'bat.dart';
+import 'bat_component.dart';
 import 'bat_service.dart';
 
 @Component(
   selector: 'my-bats',
   templateUrl: 'bat_list_component.html',
   styleUrls: ['bat_list_component.css'],
-  directives: [coreDirectives],
+  directives: [coreDirectives, BatComponent],
   pipes: [commonPipes],
 )
 
@@ -40,6 +41,16 @@ class BatListComponent implements OnInit {
     if (selected == bat) selected = null;
   }
   
+  Future<void> handleAdd() async {
+    await add(batName.value);
+    batName.value='';
+  }
+  
+  Future<void> handleDelete($event) async {
+    await delete(bat);
+    stopPropagation();
+  }
+  
   void ngOnInit() => _getBats();
 
   void onSelect(Bat bat) => selected = bat;
@@ -50,3 +61,7 @@ class BatListComponent implements OnInit {
   Future<NavigationResult> gotoDetail() => 
     _router.navigate(_batUrl(selected.id));
 }
+
+
+// (click)="delete(bat); $event.stopPropagation()"
+// (click)="add(batName.value); batName.value=''"

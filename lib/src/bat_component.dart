@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
@@ -26,10 +28,10 @@ class BatComponent implements OnActivate {
     if (id != null) bat = await (_batService.get(id));
   }
   
-  void goBack() => _location.back();
-  
   Future<void> save() async {
     await _batService.update(bat);
     goBack();
+    
+    void goBack() => _location.back();
   }
 }

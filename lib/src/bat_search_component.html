@@ -5,7 +5,7 @@
          (keyup)="search(searchBox.value)" />
   <div>
     <div *ngFor="let bat of bats | async"
-         (click)="gotoDetail(Bat)" class="search-result" >
+         (click)="gotoDetail(bat)" class="search-result" >
       {{bat.name}}
     </div>
   </div>

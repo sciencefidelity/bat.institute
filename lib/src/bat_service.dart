@@ -41,21 +41,21 @@ class BatService {
     }
   }
   
-  Future<Bat> update(Bat bat) async {
+  Future<Bat> create(String name) async {
     try {
-      final url = '$_batsUrl/${bat.id}';
-      final response =
-        await _http.put(url, headers: _headers, body: json.encode(bat));
+      final response = await _http.post(_batsUrl,
+        headers: _headers, body: json.encode({'name': name}));
       return Bat.fromJson(_extractData(response));
     } catch (e) {
       throw _handleError(e);
     }
   }
   
-  Future<Bat> create(String name) async {
+  Future<Bat> update(Bat bat) async {
     try {
-      final response = await _http.post(_batsUrl,
-        headers: _headers, body: json.encode({'name': name}));
+      final url = '$_batsUrl/${bat.id}';
+      final response =
+        await _http.put(url, headers: _headers, body: json.encode(bat));
       return Bat.fromJson(_extractData(response));
     } catch (e) {
       throw _handleError(e);

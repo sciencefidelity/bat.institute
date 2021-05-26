@@ -40,7 +40,7 @@ class BatSearchComponent implements OnInit {
   }
   
   String _batUrl(int id) =>
-    RoutePaths.bat.toUrl(parameters: {idParam: '$id');
+    RoutePaths.bat.toUrl(parameters: {idParam: '$id'});
   
   Future<NavigationResult> gotoDetail(Bat bat) =>
     _router.navigate(_batUrl(bat.id));

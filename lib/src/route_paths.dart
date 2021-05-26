@@ -5,6 +5,7 @@ const idParam = 'id';
 class RoutePaths {
   static final dashboard = RoutePath(path: 'dashboard');
   static final bats = RoutePath(path: 'bats');
+  
   static final bat = RoutePath(path: '${bats.path}/:$idParam');
 }
 

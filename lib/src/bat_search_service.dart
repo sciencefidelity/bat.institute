@@ -21,7 +21,7 @@ class BatSearchService {
     }
   }
   
-  dynamic _extractData(resp) =>json.decode(resp.body)['data'];
+  dynamic _extractData(Response resp) =>json.decode(resp.body)['data'];
   
   Exception _handleError(dynamic e) {
     print(e); // for demo puroses only

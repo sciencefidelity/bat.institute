@@ -21,7 +21,7 @@ class BatSearchComponent implements OnInit {
   Router _router;
   
   Stream<List<Bat>> bats;
-  StreamController<String> _SearchTerms = StreamController<String>.broadcast();
+  StreamController<String> _searchTerms = StreamController<String>.broadcast();
   
   BatSearchComponent(this._batSearchService, this._router) {}
   

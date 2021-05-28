@@ -35,21 +35,21 @@ class BatListComponent implements OnInit {
     selected = null;
   }
   
+  // void handleAdd() {
+  //   add(batName.value);
+  //   batName.value='';
+  // }
+  
   Future<void> delete(Bat bat) async {
     await _batService.delete(bat.id);
     bats.remove(bat);
     if (selected == bat) selected = null;
   }
   
-  Future<void> handleAdd() async {
-    await add(batName.value);
-    batName.value='';
-  }
-  
-  Future<void> handleDelete($event) async {
-    await delete(bat);
-    stopPropagation();
-  }
+  // void handleDelete($event) {
+  //   delete(bat);
+  //   $event.stopPropagation();
+  // }
   
   void ngOnInit() => _getBats();
 

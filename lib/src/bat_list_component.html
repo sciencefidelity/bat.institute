@@ -1,7 +1,7 @@
 <h2>Bats</h2>
 <div>
   <label>Bat name:</label> <input #batName />
-  <button (click)="handleAdd">
+  <button (click)="add(batName.value)">
     Add
   </button>
 </div>
@@ -12,7 +12,7 @@
     <span class="badge">{{bat.id}}</span>
     <span>{{bat.name}}</span>
     <button class="delete"
-      (click)="handleDelete($event)">x</button>
+      (click)="delete(bat)">x</button>
   </li>
 </ul>
 <div *ngIf="selected != null">

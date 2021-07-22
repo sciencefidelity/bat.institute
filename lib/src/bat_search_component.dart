@@ -19,29 +19,28 @@ import 'bat.dart';
 class BatSearchComponent implements OnInit {
   BatSearchService _batSearchService;
   Router _router;
-  
+
   Stream<List<Bat>> bats;
   StreamController<String> _searchTerms = StreamController<String>.broadcast();
-  
-  BatSearchComponent(this._batSearchService, this._router) {}
-  
+
+  BatSearchComponent(this._batSearchService, this._router);
+
   void search(String term) => _searchTerms.add(term);
-  
+
   void ngOnInit() async {
     bats = _searchTerms.stream
-        .transform(debounce(Duration(milliseconds: 300)))
+        .transform(debounce(const Duration(milliseconds: 300)))
         .distinct()
         .transform(switchMap((term) => term.isEmpty
-          ? Stream<List<Bat>>.fromIterable([<Bat>[]])
-          : _batSearchService.search(term).asStream()))
+            ? Stream<List<Bat>>.fromIterable([<Bat>[]])
+            : _batSearchService.search(term).asStream()))
         .handleError((e) {
       print(e); // for demo purposes only
     });
   }
-  
-  String _batUrl(int id) =>
-    RoutePaths.bat.toUrl(parameters: {idParam: '$id'});
-  
+
+  String _batUrl(int id) => RoutePaths.bat.toUrl(parameters: {idParam: '$id'});
+
   Future<NavigationResult> gotoDetail(Bat bat) =>
-    _router.navigate(_batUrl(bat.id));
+      _router.navigate(_batUrl(bat.id));
 }

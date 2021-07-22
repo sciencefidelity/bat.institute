@@ -1,6 +1,6 @@
 # mac stuff
 .nova
-DS_Store
+.DS_Store
 
 # Files and directories created by pub
 .dart_tool/

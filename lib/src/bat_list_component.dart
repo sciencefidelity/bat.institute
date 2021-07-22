@@ -15,7 +15,6 @@ import 'bat_service.dart';
   directives: [coreDirectives, BatComponent],
   pipes: [commonPipes],
 )
-
 class BatListComponent implements OnInit {
   final BatService _batService;
   final Router _router;
@@ -27,41 +26,39 @@ class BatListComponent implements OnInit {
   Future<void> _getBats() async {
     bats = await _batService.getAll();
   }
-  
+
   Future<void> add(String name) async {
     name = name.trim();
     if (name.isEmpty) return null;
-    bats.add(await _heroService.create(name));
+    bats.add(await _batService.create(name));
     selected = null;
   }
-  
+
   // void handleAdd() {
   //   add(batName.value);
   //   batName.value='';
   // }
-  
+
   Future<void> delete(Bat bat) async {
     await _batService.delete(bat.id);
     bats.remove(bat);
     if (selected == bat) selected = null;
   }
-  
+
   // void handleDelete($event) {
   //   delete(bat);
   //   $event.stopPropagation();
   // }
-  
+
   void ngOnInit() => _getBats();
 
   void onSelect(Bat bat) => selected = bat;
-  
-  String _batUrl(int id) => 
-    RoutePaths.bat.toUrl(parameters: {idParam: '$id'});
-  
-  Future<NavigationResult> gotoDetail() => 
-    _router.navigate(_batUrl(selected.id));
-}
 
+  String _batUrl(int id) => RoutePaths.bat.toUrl(parameters: {idParam: '$id'});
+
+  Future<NavigationResult> gotoDetail() =>
+      _router.navigate(_batUrl(selected.id));
+}
 
 // (click)="delete(bat); $event.stopPropagation()"
 // (click)="add(batName.value); batName.value=''"

@@ -34,21 +34,11 @@ class BatListComponent implements OnInit {
     selected = null;
   }
 
-  // void handleAdd() {
-  //   add(batName.value);
-  //   batName.value='';
-  // }
-
   Future<void> delete(Bat bat) async {
     await _batService.delete(bat.id);
     bats.remove(bat);
     if (selected == bat) selected = null;
   }
-
-  // void handleDelete($event) {
-  //   delete(bat);
-  //   $event.stopPropagation();
-  // }
 
   void ngOnInit() => _getBats();
 
@@ -59,6 +49,3 @@ class BatListComponent implements OnInit {
   Future<NavigationResult> gotoDetail() =>
       _router.navigate(_batUrl(selected.id));
 }
-
-// (click)="delete(bat); $event.stopPropagation()"
-// (click)="add(batName.value); batName.value=''"

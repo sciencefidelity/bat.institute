@@ -22,7 +22,7 @@ class InMemoryDataService extends MockClient {
   ];
   static List<Bat> _batsDb;
   static int _nextId;
-  
+
   static Future<Response> _handler(Request request) async {
     if (_batsDb == null) resetDb();
     var data;
@@ -61,13 +61,13 @@ class InMemoryDataService extends MockClient {
     return Response(json.encode({'data': data}), 200,
       headers: {'content-type': 'application/json'});
   }
-  
+
   static resetDb() {
     _batsDb = _initialBats.map((json) => Bat.fromJson(json)).toList();
     _nextId = _batsDb.map((bat) => bat.id).fold(0, max) + 1;
   }
   static String lookUpName(int id) =>
     _batsDb.firstWhere((bat) => bat.id == id, orElse: null)?.name;
-  
+
   InMemoryDataService() : super(_handler);
 }

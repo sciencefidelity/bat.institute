@@ -30,10 +30,9 @@ class InMemoryDataService extends MockClient {
       case 'GET':
         final id = int.tryParse(request.url.pathSegments.last);
         if (id != null) {
-          data = _batsDb
-            .firstWhere((bat) => bat.id == id); //throws if no match
+          data = _batsDb.firstWhere((bat) => bat.id == id); //throws if no match
         } else {
-          String prefix = request.url.queryParameters['name'] ?? '';
+          var prefix = request.url.queryParameters['name'] ?? '';
           final regExp = RegExp(prefix, caseSensitive: false);
           data = _batsDb.where((bat) => bat.name.contains(regExp)).toList();
         }
@@ -59,15 +58,16 @@ class InMemoryDataService extends MockClient {
         throw 'Unimplemented HTTP method ${request.method}';
     }
     return Response(json.encode({'data': data}), 200,
-      headers: {'content-type': 'application/json'});
+        headers: {'content-type': 'application/json'});
   }
 
   static resetDb() {
     _batsDb = _initialBats.map((json) => Bat.fromJson(json)).toList();
     _nextId = _batsDb.map((bat) => bat.id).fold(0, max) + 1;
   }
+
   static String lookUpName(int id) =>
-    _batsDb.firstWhere((bat) => bat.id == id, orElse: null)?.name;
+      _batsDb.firstWhere((bat) => bat.id == id, orElse: () => null)?.name;
 
   InMemoryDataService() : super(_handler);
 }

@@ -40,6 +40,7 @@ class BatListComponent implements OnInit {
     if (selected == bat) selected = null;
   }
 
+  @override
   void ngOnInit() => _getBats();
 
   void onSelect(Bat bat) => selected = bat;

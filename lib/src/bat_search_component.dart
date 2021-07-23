@@ -4,9 +4,9 @@ import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:stream_transform/stream_transform.dart';
 
-import 'route_paths.dart';
-import 'bat_search_service.dart';
 import 'bat.dart';
+import 'bat_search_service.dart';
+import 'route_paths.dart';
 
 @Component(
   selector: 'bat-search',

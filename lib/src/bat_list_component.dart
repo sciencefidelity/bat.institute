@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
-import 'route_paths.dart';
 import 'bat.dart';
 import 'bat_component.dart';
 import 'bat_service.dart';
+import 'route_paths.dart';
 
 @Component(
   selector: 'my-bats',

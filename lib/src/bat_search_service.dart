@@ -10,7 +10,7 @@ class BatSearchService {
 
   BatSearchService(this._http);
 
-  Future<List<Bat>> Search(String term) async {
+  Future<List<Bat>> search(String term) async {
     try {
       final response = await _http.get('app/bats/?name=$term');
       return (_extractData(response) as List)

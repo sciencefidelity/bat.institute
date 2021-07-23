@@ -17,23 +17,25 @@ import 'bat.dart';
   pipes: [commonPipes],
 )
 class BatSearchComponent implements OnInit {
-  BatSearchService _batSearchService;
-  Router _router;
+  final BatSearchService _batSearchService;
+  final Router _router;
 
   Stream<List<Bat>> bats;
-  StreamController<String> _searchTerms = StreamController<String>.broadcast();
+  final StreamController<String> _searchTerms =
+      StreamController<String>.broadcast();
 
   BatSearchComponent(this._batSearchService, this._router);
 
   void search(String term) => _searchTerms.add(term);
 
+  @override
   void ngOnInit() async {
     bats = _searchTerms.stream
-        .transform(debounce(const Duration(milliseconds: 300)))
+        .debounce(Duration(milliseconds: 300))
         .distinct()
-        .transform(switchMap((term) => term.isEmpty
+        .switchMap((term) => term.isEmpty
             ? Stream<List<Bat>>.fromIterable([<Bat>[]])
-            : _batSearchService.search(term).asStream()))
+            : _batSearchService.search(term).asStream())
         .handleError((e) {
       print(e); // for demo purposes only
     });

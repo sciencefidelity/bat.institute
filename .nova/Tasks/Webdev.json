@@ -1,0 +1,9 @@
+{
+  "actions" : {
+    "run" : {
+      "enabled" : true,
+      "script" : "webdev serve --hostname 0.0.0.0"
+    }
+  },
+  "identifier" : "31F4290E-9690-4176-BA42-45569825BE32"
+}

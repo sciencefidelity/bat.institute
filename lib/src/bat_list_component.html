@@ -1,7 +1,7 @@
 <h2>Bats</h2>
 <div>
-  <label>Bat name:</label> <input #batName />
-  <button (click)="add(batName.value); batName.value=''">
+  <label>Bat name: </label><input #batName />
+  <button (click)="onAdd(batName.value)">
     Add
   </button>
 </div>
@@ -12,7 +12,7 @@
     <span class="badge">{{bat.id}}</span>
     <span>{{bat.name}}</span>
     <button class="delete"
-      (click)="delete(bat); $event.stopPropagation()">x</button>
+      (click)="onDelete($event)">x</button>
   </li>
 </ul>
 <div *ngIf="selected != null">

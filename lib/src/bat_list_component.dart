@@ -40,6 +40,16 @@ class BatListComponent implements OnInit {
     if (selected == bat) selected = null;
   }
 
+  void onAdd(String name) {
+    add(name);
+    name = '';
+  }
+
+  void onDelete(event) {
+    delete(event);
+    event.stopPropagation();
+  }
+
   @override
   void ngOnInit() => _getBats();
 
@@ -50,3 +60,6 @@ class BatListComponent implements OnInit {
   Future<NavigationResult> gotoDetail() =>
       _router.navigate(_batUrl(selected.id));
 }
+
+// (click)="add(batName.value); batName.value=''"
+// (click)="delete(bat); $event.stopPropagation()"

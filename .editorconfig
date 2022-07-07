@@ -1,0 +1,54 @@
+# EditorConfig is awesome: https://EditorConfig.org
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# TypeScript, JavaScript
+[*.{ts,tsx,js,jsx,cjs,mjs}]
+indent_style = space
+indent_size = 2
+
+# Framework component
+[*.{astro,svelte,vue}]
+indent_style = space
+indent_size = 2
+
+# Go
+[{*.go,go.mod,go.sum}]
+indent_style = tab
+indent_size = 2
+
+# Dart, Flutter
+[*.dart]
+indent_style = space
+indent_size = 2
+
+# Markup
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Markdown
+[*.md]
+indent_style = space
+indent_size = 2
+
+# Stylesheet
+[*.{css,scss}]
+indent_style = space
+indent_size = 2
+
+# json
+[*.json]
+indent_style = space
+indent_size = 2
+
+# yml
+[*.yml]
+indent_style = space
+indent_size = 2
